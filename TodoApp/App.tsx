@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import {
   FlatList,
-  SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type Todo = {
   id: string;
@@ -18,6 +18,8 @@ type Todo = {
 const App = () => {
   const [todo, setTodo] = useState<Todo[]>([]);
   const [text, setText] = useState('');
+  const [status, setStatus] = useState('all');
+  const [search, setSearch] = useState('');
 
   // Add Todo
   const addTodo = () => {
@@ -54,12 +56,25 @@ const App = () => {
     );
   };
 
+  // Status Filter
+  const filteredTodos =
+    status === 'pending'
+      ? todo.filter(item => !item.isCompleted)
+      : status === 'completed'
+      ? todo.filter(item => item.isCompleted)
+      : todo;
+
+  // Search Filter
+  const searchedTodos = filteredTodos.filter(item =>
+    item.title.toLowerCase().includes(search.toLowerCase()),
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>Todo App</Text>
 
-        {/* Input */}
+        {/* Add Todo */}
         <View style={styles.inputContainer}>
           <TextInput
             value={text}
@@ -74,9 +89,72 @@ const App = () => {
           </TouchableOpacity>
         </View>
 
+        {/* Status Filter */}
+        <View style={styles.statusContainer}>
+          <TouchableOpacity
+            onPress={() => setStatus('all')}
+            style={[
+              styles.statusButton,
+              status === 'all' && styles.activeStatusButton,
+            ]}
+          >
+            <Text
+              style={[
+                styles.statusText,
+                status === 'all' && styles.activeStatusText,
+              ]}
+            >
+              All
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => setStatus('pending')}
+            style={[
+              styles.statusButton,
+              status === 'pending' && styles.activeStatusButton,
+            ]}
+          >
+            <Text
+              style={[
+                styles.statusText,
+                status === 'pending' && styles.activeStatusText,
+              ]}
+            >
+              Pending
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => setStatus('completed')}
+            style={[
+              styles.statusButton,
+              status === 'completed' && styles.activeStatusButton,
+            ]}
+          >
+            <Text
+              style={[
+                styles.statusText,
+                status === 'completed' && styles.activeStatusText,
+              ]}
+            >
+              Completed
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Search */}
+        <TextInput
+          value={search}
+          onChangeText={setSearch}
+          style={styles.searchContainer}
+          placeholder="Search todo..."
+          placeholderTextColor="#999"
+        />
+
         {/* Todo List */}
         <FlatList
-          data={todo}
+          data={searchedTodos}
           keyExtractor={item => item.id}
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
@@ -112,7 +190,7 @@ const App = () => {
             </View>
           )}
           ListEmptyComponent={
-            <Text style={styles.emptyText}>No todos added yet</Text>
+            <Text style={styles.emptyText}>No todos found</Text>
           }
         />
       </View>
@@ -164,6 +242,42 @@ const styles = StyleSheet.create({
   addText: {
     fontSize: 17,
     color: '#111',
+  },
+
+  statusContainer: {
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+
+  statusButton: {
+    backgroundColor: '#E5E5E5',
+    paddingHorizontal: 18,
+    paddingVertical: 12,
+    marginRight: 10,
+    borderRadius: 6,
+  },
+
+  activeStatusButton: {
+    backgroundColor: '#B8DDEC',
+  },
+
+  statusText: {
+    color: '#333',
+  },
+
+  activeStatusText: {
+    fontWeight: '700',
+    color: '#111',
+  },
+
+  searchContainer: {
+    borderWidth: 1,
+    borderColor: '#222',
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    marginTop: 10,
+    fontSize: 16,
+    color: '#222',
   },
 
   todoRow: {
