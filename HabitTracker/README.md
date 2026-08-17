@@ -41,6 +41,7 @@ https://github.com/user-attachments/assets/2736ba36-6c74-49d8-be85-28c0714e0755
 
 ## 📂 Project Structure
 
+<pre>
 src/
 ├── components/
 │   ├── Button/
@@ -51,6 +52,7 @@ src/
 │
 ├── constants/
 ├── navigation/
+│
 ├── screens/
 │   ├── Add/
 │   ├── Details/
@@ -59,6 +61,7 @@ src/
 │   └── Profile/
 │
 └── types/
+</pre>
 
 ## 📱 Main Screens
 
