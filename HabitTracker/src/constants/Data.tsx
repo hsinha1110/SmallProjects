@@ -1,0 +1,108 @@
+export const habitsData = [
+  {
+    id: 1,
+    name: 'Drink Water',
+    description: 'Drink 8 glasses of water',
+    icon: '💧',
+    color: '#2196F3',
+    completed: true,
+  },
+  {
+    id: 2,
+    name: 'Exercise',
+    description: 'Workout for 30 minutes',
+    icon: '🏃',
+    color: '#22C55E',
+    completed: true,
+  },
+  {
+    id: 3,
+    name: 'Read Book',
+    description: 'Read for 20 minutes',
+    icon: '📖',
+    color: '#6D3FEA',
+    completed: false,
+  },
+  {
+    id: 4,
+    name: 'Meditation',
+    description: 'Meditate for 10 minutes',
+    icon: '🧘',
+    color: '#F97316',
+    completed: false,
+  },
+  {
+    id: 5,
+    name: 'Gratitude',
+    description: 'Write 3 things you are grateful for',
+    icon: '❤️',
+    color: '#EC4899',
+    completed: true,
+  },
+  {
+    id: 6,
+    name: 'Sleep Early',
+    description: 'Go to bed before 11 PM',
+    icon: '😴',
+    color: '#8B5CF6',
+    completed: false,
+  },
+  {
+    id: 7,
+    name: 'Healthy Food',
+    description: 'Eat healthy meals',
+    icon: '🥗',
+    color: '#10B981',
+    completed: false,
+  },
+  {
+    id: 8,
+    name: 'Walk',
+    description: 'Walk for 30 minutes',
+    icon: '🚶',
+    color: '#F59E0B',
+    completed: true,
+  },
+];
+export const habitColors = [
+  {
+    id: '1',
+    color: '#2196F3',
+    name: 'Blue',
+  },
+  {
+    id: '2',
+    color: '#22C55E',
+    name: 'Green',
+  },
+  {
+    id: '3',
+    color: '#6D3FEA',
+    name: 'Purple',
+  },
+  {
+    id: '4',
+    color: '#F97316',
+    name: 'Orange',
+  },
+  {
+    id: '5',
+    color: '#EC4899',
+    name: 'Pink',
+  },
+  {
+    id: '6',
+    color: '#EF4444',
+    name: 'Red',
+  },
+  {
+    id: '7',
+    color: '#F59E0B',
+    name: 'Yellow',
+  },
+  {
+    id: '8',
+    color: '#14B8A6',
+    name: 'Teal',
+  },
+];
