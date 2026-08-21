@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { moderateScale } from '../../styles/scaling';
 
 const styles = StyleSheet.create({
   container: {
     width: '40%',
-    height: 60,
-    borderRadius: 55,
+    height: moderateScale(60),
+    borderRadius: moderateScale(55),
     backgroundColor: '#8B5CF6',
 
     flexDirection: 'row',
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
     alignSelf: 'center',
-    gap: 15,
+    gap: moderateScale(15),
   },
 
   secondary: {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 20,
+    fontSize: moderateScale(20),
     color: '#FFFFFF',
     fontWeight: '600',
   },

@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styles from './styles';
 import { HeaderProps } from '../types';
 

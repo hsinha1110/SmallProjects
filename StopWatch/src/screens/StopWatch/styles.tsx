@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-
+import { moderateScale } from '../../styles/scaling';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   },
 
   timerContainer: {
-    marginTop: 100,
+    marginTop: moderateScale(100),
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
 
   timeText: {
-    fontSize: 50,
+    fontSize: moderateScale(50),
     color: '#FFFFFF',
     fontWeight: 'bold',
   },
@@ -33,16 +33,16 @@ const styles = StyleSheet.create({
   },
 
   millisecondText: {
-    fontSize: 50,
+    fontSize: moderateScale(50),
     color: '#8B5CF6',
     fontWeight: 'bold',
   },
 
   buttonContainer: {
-    marginTop: 50,
+    marginTop: moderateScale(50),
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: moderateScale(20),
   },
 
   buttons: {
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
 
-    paddingVertical: 15,
-    paddingHorizontal: 20,
+    paddingVertical: moderateScale(15),
+    paddingHorizontal: moderateScale(20),
 
     borderBottomWidth: 1,
     borderBottomColor: '#333',
@@ -71,17 +71,17 @@ const styles = StyleSheet.create({
 
   lapText: {
     color: '#FFFFFF',
-    fontSize: 18,
+    fontSize: moderateScale(18),
   },
 
   lapsContainer: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingHorizontal: moderateScale(20),
+    paddingBottom: moderateScale(20),
   },
   buttonSecond: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: 20,
+    gap: moderateScale(20),
   },
 });
 
