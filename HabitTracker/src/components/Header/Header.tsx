@@ -7,6 +7,8 @@ const Header = ({
   title,
   leftIcon: LeftIcon,
   rightIcon: RightIcon,
+  colorLeft,
+  colorRight,
   onLeftPress,
   onRightPress,
 }: HeaderProps) => {
@@ -16,7 +18,7 @@ const Header = ({
       <View style={styles.side}>
         {LeftIcon && (
           <Pressable style={styles.iconButton} onPress={onLeftPress}>
-            <LeftIcon size={24} color="#222222" />
+            <LeftIcon size={24} color={colorLeft} />
           </Pressable>
         )}
       </View>
@@ -32,7 +34,7 @@ const Header = ({
       <View style={[styles.side, styles.rightSide]}>
         {RightIcon && (
           <Pressable style={styles.iconButton} onPress={onRightPress}>
-            <RightIcon size={24} color="#222222" />
+            <RightIcon size={24} color={colorRight} />
           </Pressable>
         )}
       </View>

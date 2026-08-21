@@ -101,6 +101,8 @@ const Home = ({ habits, setHabits }: HomeProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <Header
+        colorLeft="black"
+        colorRight="black"
         title="Habit Tracker"
         leftIcon={Bars3Icon}
         rightIcon={BellIcon}

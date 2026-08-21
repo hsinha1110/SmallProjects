@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 14,
     fontSize: 16,
-    color: '#222222',
+    color: 'black',
+    fontWeight: '500',
     backgroundColor: '#FFFFFF',
   },
 

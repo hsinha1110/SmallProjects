@@ -47,6 +47,8 @@ const Details = ({ habits, setHabits }: DetailsProps) => {
     return (
       <SafeAreaView style={styles.container}>
         <Header
+          colorLeft="black"
+          colorRight="black"
           title="Habit Details"
           leftIcon={ArrowLeftIcon}
           onLeftPress={() => navigation.goBack()}
@@ -66,6 +68,8 @@ const Details = ({ habits, setHabits }: DetailsProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <Header
+        colorLeft="black"
+        colorRight="black"
         title="Habit Details"
         leftIcon={ArrowLeftIcon}
         rightIcon={EllipsisHorizontalIcon}

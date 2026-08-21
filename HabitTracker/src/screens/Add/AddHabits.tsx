@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, Pressable, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { BackwardIcon } from 'react-native-heroicons/outline';
+import { BackwardIcon, TrashIcon } from 'react-native-heroicons/outline';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import {
   NativeStackNavigationProp,
@@ -67,6 +67,10 @@ const AddHabits = ({ habits, setHabits, navigation }: AddProps) => {
     setSelectedColor(editingHabit.color);
   }, [editingHabit]);
 
+  const handleDelete = () => {
+    setHabits(habits => habits.filter(item => item.id !== habitId));
+    navigation.navigate(Routes.BOTTOM_NAVIGATION, { screen: Routes.HOME });
+  };
   const checkValidations = () => {
     setHabitNameError('');
 
@@ -157,9 +161,13 @@ const AddHabits = ({ habits, setHabits, navigation }: AddProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <Header
+        colorRight={editingMode ? 'red' : 'black'}
+        colorLeft={'black'}
         title={editingMode ? 'Edit Habit' : 'Add Habit'}
         leftIcon={BackwardIcon}
+        rightIcon={TrashIcon}
         onLeftPress={() => navigation.goBack()}
+        onRightPress={() => handleDelete()}
       />
 
       {/* Habit Name */}
@@ -226,7 +234,12 @@ const AddHabits = ({ habits, setHabits, navigation }: AddProps) => {
         <Button
           title={editingMode ? 'Update Habit' : 'Save Habit'}
           onPress={checkValidations}
-          style={styles.button}
+          style={[
+            styles.button,
+            {
+              backgroundColor: editingMode ? '#35A241' : '#5B32D6',
+            },
+          ]}
         />
       </View>
     </SafeAreaView>

@@ -2,7 +2,8 @@ import { StyleProp, ViewStyle } from 'react-native';
 
 export interface HeaderProps {
   title: string;
-
+  colorLeft: string;
+  colorRight: string;
   leftIcon?: React.ComponentType<{
     size?: number;
     color?: string;

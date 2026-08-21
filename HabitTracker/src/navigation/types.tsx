@@ -23,7 +23,9 @@ export type BottomTabParamList = {
 
 // Main Stack
 export type MainStackParamList = {
-  [Routes.BOTTOM_NAVIGATION]: undefined;
+  [Routes.BOTTOM_NAVIGATION]: {
+    screen?: keyof BottomTabParamList;
+  };
 
   [Routes.ADD]: {
     id?: number;
